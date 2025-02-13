@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/super-ugly-number
+# https://algo.monster/liteproblems/313
 import heapq
 from typing import List
 
