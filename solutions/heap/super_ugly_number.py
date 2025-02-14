@@ -3,6 +3,8 @@
 import heapq
 from typing import List
 
+# time complexity: O(n * log(n) * k) where k is the number of primes
+# space complexity: O(n)
 class Solution:
     def nthSuperUglyNumber(self, n: int, primes: List[int]) -> int:
         min_heap = [1]

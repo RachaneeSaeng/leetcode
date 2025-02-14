@@ -1,5 +1,8 @@
 # https://leetcode.com/problems/basic-calculator/
 # https://leetcode.com/problems/basic-calculator-ii/description/
+
+# time complexity: O(n)
+# space complexity: O(n)
 class Solution:
      
     def calculate(self, s: str) -> int:
