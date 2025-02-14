@@ -19,6 +19,9 @@ def test_findKthLargest_case4(solution):
 
 def test_findKthLargest_case5(solution):
     assert solution.findKthLargest([2,1], 2) == 1
+    
+def test_findKthLargest_case6(solution):
+    assert solution.findKthLargest([3,2], 2) == 2
 
 if __name__ == "__main__":
     pytest.main()

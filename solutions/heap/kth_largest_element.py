@@ -1,11 +1,11 @@
 # https://leetcode.com/problems/kth-largest-element-in-an-array/
 from typing import List
 
-# time complexity: O(log(n))
+# time complexity: O(n + k log n) or O(n log n)
 #pace complexity: O(1)
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:  
-        # time complexity: O(log(n))      
+        # time complexity: O(log n)      
         def heapify(nums, n, i):
             largest_index = i
             left = 2 * i + 1 # left node
