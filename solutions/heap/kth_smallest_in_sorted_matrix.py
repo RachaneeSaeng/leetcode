@@ -8,16 +8,24 @@ from typing import List
 class Solution:
     def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
         n = len(matrix)
-        min_heap = [(matrix[0][0], 0, 0)] # save tuple (min_number, rol, col) for the first element
+        min_heap = [(matrix[i][0], i, 0) for i in range(min(n, k))] # save tuple (min_number, row, col) for the first element of each row
+        heapq.heapify(min_heap)
         
         for _ in range(k-1):
-            min_number, current_row, current_col  = heapq.heappop(min_heap)
-            next_row = current_row + 1 # pointer move relatively to the current smallest element
-            next_col = current_col + 1
-            
-            if current_col == 0 and next_row < n: # add only first element of the next row to heap so it be consider as the next smallest element 
-                heapq.heappush(min_heap, (matrix[next_row][current_col], next_row, current_col))
-            if next_col < n:
-                heapq.heappush(min_heap, (matrix[current_row][next_col], current_row, next_col))
+            min_number, current_row, current_col = heapq.heappop(min_heap)
+            if current_col + 1 < n:
+                heapq.heappush(min_heap, (matrix[current_row][current_col + 1], current_row, current_col + 1))
             
         return heapq.heappop(min_heap)[0]
+    
+    # def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+    #     n = len(matrix)
+    #     min_heap = [(matrix[i][0], i, 0) for i in range(min(n, k))] # save tuple (min_number, row, col) for the first element of each row
+    #     heapq.heapify(min_heap)
+        
+    #     for _ in range(k-1):
+    #         min_number, current_row, current_col = heapq.heappop(min_heap)
+    #         if current_col + 1 < n:
+    #             heapq.heappush(min_heap, (matrix[current_row][current_col + 1], current_row, current_col + 1))
+            
+    #     return heapq.heappop(min_heap)[0]
