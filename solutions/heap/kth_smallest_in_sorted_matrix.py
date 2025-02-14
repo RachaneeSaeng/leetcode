@@ -9,10 +9,9 @@ class Solution:
     def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
         n = len(matrix)
         min_heap = [(matrix[0][0], 0, 0)] # save tuple (min_number, rol, col) for the first element
-        min_number = matrix[0][0]
         
-        for _ in range(k):
-            min_number, current_row, current_col  = min_heap[0]
+        for _ in range(k-1):
+            min_number, current_row, current_col  = heapq.heappop(min_heap)
             next_row = current_row + 1 # pointer move relatively to the current smallest element
             next_col = current_col + 1
             
@@ -20,8 +19,5 @@ class Solution:
                 heapq.heappush(min_heap, (matrix[next_row][current_col], next_row, current_col))
             if next_col < n:
                 heapq.heappush(min_heap, (matrix[current_row][next_col], current_row, next_col))
-                
-            # heap will be sorted by the first element of the tuple
-            min_number  = heapq.heappop(min_heap)[0]
             
-        return min_number
+        return heapq.heappop(min_heap)[0]
