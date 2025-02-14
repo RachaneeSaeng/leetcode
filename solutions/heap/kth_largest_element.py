@@ -35,3 +35,21 @@ class Solution:
             heapify(nums, remain_array_len, 0)
 
         return nums[n - k]
+    
+
+# # time complexity: O(n * log(k)) or O(n log n)
+# # space complexity: O(k)
+# class Solution:
+#     def findKthLargest(self, nums: List[int], k: int) -> int:
+        
+#         # Create a min-heap with the first k elements
+#         heap = nums[:k]
+#         heapq.heapify(heap)
+        
+#         # Iterate through the rest of the elements
+#         for num in nums[k:]:
+#             if num > heap[0]:
+#                 heapq.heappushpop(heap, num)
+        
+#         # The root of the heap is the kth largest element
+#         return heap[0] # the root of the heap is the smallest element among k items, which = kth largest element
