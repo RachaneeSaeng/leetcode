@@ -13,6 +13,7 @@ from solutions.heap.k_closest_elements import Solution
     ([1, 2, 3, 4, 5], 3, 4, [3, 4, 5]),
     ([1,1,2,3,4,5], 4, -1, [1, 1, 2, 3]),
     ([1,1,2,3,4,5], 5, 10, [1, 2, 3, 4, 5]),
+    ([1,1,1,10,10,10], 1, 9, [10]),
 ])
 def test_findClosestElements(arr, k, x, expected):
     sol = Solution()

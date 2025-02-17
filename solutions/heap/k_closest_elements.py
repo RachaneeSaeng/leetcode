@@ -12,7 +12,7 @@ class Solution:
             n = len(arr)
             left, right = 0, n - k
             while left < right:
-                mid = left + right // 2
+                mid = (left + right) // 2
                 # Check the distance from the x to the middle element and the element at mid + k position.
                 # If the element at mid is closer to x or equal in distance compared to the element at mid + k,
                 # we move the right pointer to mid. Otherwise, we adjust the left pointer to mid + 1.
@@ -24,5 +24,3 @@ class Solution:
     
         starting_index = findStartingIndex(arr, k, x)
         return arr[starting_index:starting_index + k]
-        
-        
