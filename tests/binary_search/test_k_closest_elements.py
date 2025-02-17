@@ -1,5 +1,5 @@
 import pytest
-from solutions.heap.k_closest_elements import Solution
+from solutions.binary_search.k_closest_elements import Solution
 
 @pytest.mark.parametrize("arr, k, x, expected", [
     ([1, 2, 3, 4, 5], 4, 3, [1, 2, 3, 4]),
