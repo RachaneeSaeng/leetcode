@@ -1,5 +1,5 @@
 import pytest
-from solutions.heap.k_most_frequent_elements import Solution
+from solutions.heap.top_k_frequent_elements import Solution
 
 @pytest.fixture
 def solution():
