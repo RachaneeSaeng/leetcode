@@ -1,3 +1,5 @@
+# time complexity: O(nlogn) average, O(n^2) worst case
+# space complexity: O(logn) average, O(n) worst case
 def quick_sort(array, low, high):
     if low < high:
         # pi is partitioning index
@@ -19,10 +21,3 @@ def partition(array, low, high):
     
     array[i + 1], array[high] = array[high], array[i + 1]  # Place pivot in correct position
     return i + 1           # Return pivot's final position
-
-# Example usage
-if __name__ == "__main__":
-    array = [10, 7, 8, 9, 1, 5]
-    n = len(array)
-    quick_sort(array, 0, n - 1)
-    print("Sorted array is:", array)
