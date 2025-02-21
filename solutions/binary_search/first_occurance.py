@@ -7,7 +7,7 @@ from typing import List
 class Solution:
     def findFirstOccurance(self, arr: List[int], k: int) -> int:
         n = len(arr)
-        left, right = 0, n
+        left, right = 0, n-1
         first_occurance_idx = -1
         while left <= right:
             mid = (left + right) // 2
