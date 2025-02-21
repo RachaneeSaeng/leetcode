@@ -7,7 +7,7 @@ from typing import List
 class Solution:
     def findFirstTrue(self, arr: List[bool]) -> int:
         n = len(arr)
-        left, right = 0, n
+        left, right = 0, n-1
         first_true_idx = -1
         while left <= right:
             mid = (left + right) // 2
