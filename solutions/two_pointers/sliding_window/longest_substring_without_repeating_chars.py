@@ -5,26 +5,15 @@
 # space complexity: O(n)
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        longest_substr = 0
-        n = len(s)
-        i, j = 0,0
-        char_set = set()
-        while i <= j and j < n:
-            new_char = s[j]            
-            if new_char in char_set:
-                # move i until pass the repeatign char
-                while True:
-                    c =  s[i]                   
-                    char_set.remove(c)
-                    i += 1
-                    if c == new_char:
-                        break          
-            else: 
-                sub_str = s[i:j+1]
-                if  len(sub_str) > longest_substr:
-                    longest_substr = len(sub_str)
-                    
-            j += 1
-            char_set.add(new_char)
+        char_positions = {}
+        max_length = 0
+        start = 0
+        
+        for end, char in enumerate(s):
+            if char in char_positions:
+                start = max(start, char_positions[char] + 1) # use max to ignore char that already be omitted
                 
-        return longest_substr
+            char_positions[char] = end
+            max_length = max(max_length, end - start + 1)
+            
+        return max_length
