@@ -7,20 +7,18 @@
 class Solution:    
     # if no loop, the number is a happy number
     def isHappy(self, n: int) -> bool:
-        def computeSquare(a: int):
-            num_strs = str(a)
-            result = 0
-            for num_str in num_strs:
-                result += int(num_str) * int(num_str)
-            return result
-            
-        slow_square = computeSquare(n)
-        fast_square = computeSquare(slow_square) 
+        def computeSquare(n):
+            total_sum = 0
+            while n > 0:
+                n, digit = divmod(n, 10)
+                total_sum += digit ** 2
+            return total_sum
         
-        while slow_square != 1 and fast_square != 1:
-            slow_square = computeSquare(slow_square)
-            fast_square = computeSquare(computeSquare(fast_square))
-            if slow_square == fast_square: # To detect if the square computation lead to loop
-                return False
+        slow = n
+        fast = computeSquare(n)
+        
+        while fast != 1 and slow != fast:
+            slow = computeSquare(slow)
+            fast = computeSquare(computeSquare(fast))
             
-        return True
+        return fast == 1
