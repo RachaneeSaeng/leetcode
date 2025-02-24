@@ -12,6 +12,7 @@ from solutions.two_pointers.list_node import ListNode
 
 # time complexity: O(n)
 # space complexity: O(1)
+# Not: this can be solved by using a hash table to store visited nodes but the space complexity will be O(n)
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         slow = head

@@ -1,6 +1,9 @@
 # https://leetcode.com/problems/happy-number/description/
 # https://algo.monster/problems/happy_number
 
+# time complexity: O(logn)
+# space complexity: O(1)
+# Note: this can be solved by using a hash table to store visited numbers but the space complexity will be O(logn)
 class Solution:    
     # if no loop, the number is a happy number
     def isHappy(self, n: int) -> bool:
