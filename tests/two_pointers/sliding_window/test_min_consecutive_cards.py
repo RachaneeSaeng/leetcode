@@ -1,5 +1,5 @@
 import pytest
-from solutions.two_pointers.sliding_window.max_consecutive_cards import Solution
+from solutions.two_pointers.sliding_window.min_consecutive_cards import Solution
 
 def test_minimumCardPickup_case6():
     solution = Solution()
