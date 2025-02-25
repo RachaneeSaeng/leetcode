@@ -10,14 +10,14 @@ class Solution:
         s_len = len(s)
         p_counter = Counter(p)
         s_counter = Counter(s[:len(p)])
-        last_posible_start = s_len - p_len
+        last_possible_start = s_len - p_len
         
         result = []
         
-        for i in range(last_posible_start + 1):
+        for i in range(last_possible_start + 1):
             if s_counter == p_counter:
                 result.append(i)
-            if i < last_posible_start:
+            if i < last_possible_start:
                 s_counter[s[i + p_len]] += 1
                 s_counter[s[i]] -= 1
                 
