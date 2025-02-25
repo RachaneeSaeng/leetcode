@@ -42,6 +42,9 @@ def test_subarray_sum_mixed_numbers_3():
     
 def test_subarray_sum_mixed_numbers_4():
     assert Solution().subarraySum([1,-1,0], 0) == 3
+    
+def test_subarray_sum_all_zero():
+    assert Solution().subarraySum([0,0,0,0,0,0,0,0,0,0], 0) == 55
 
 if __name__ == "__main__":
     pytest.main()

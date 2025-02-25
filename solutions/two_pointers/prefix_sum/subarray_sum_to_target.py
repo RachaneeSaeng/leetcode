@@ -10,18 +10,21 @@ class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         result = 0
         prefix_sum = 0
-        prefix_sum_map = {}
+        prefix_sum_count = {}
         
-        for i, num in enumerate(nums):
+        for num in nums:
             prefix_sum += num
             
             if prefix_sum == k:
                 result += 1
                 
             prefix_sum_complement = prefix_sum -  k
-            if prefix_sum_complement in prefix_sum_map:
-                result += 1
+            if prefix_sum_complement in prefix_sum_count:
+                result += prefix_sum_count[prefix_sum_complement]
                 
-            prefix_sum_map[prefix_sum] = i
+            if prefix_sum in prefix_sum_count:
+                prefix_sum_count[prefix_sum] += 1
+            else:
+                prefix_sum_count[prefix_sum] = 1
                 
         return result
