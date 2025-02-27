@@ -5,6 +5,8 @@ from typing import List, Optional
 from solutions.tree.tree_node import TreeNode
 from collections import deque
 
+# Time complexity: O(N)
+# Space complexity: O(N)
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
