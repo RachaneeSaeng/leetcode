@@ -9,17 +9,19 @@ class Solution:
         if not root:
             return []
         
-        queue = deque([root])
         result = []
+        queue = deque([root])
+        
         while queue:
-            node = TreeNode()
-            for _ in range(len(queue)):
+            level_length = len(queue)
+            for i in range(level_length):
                 node = queue.popleft()
+                if i == level_length - 1:
+                    result.append(node.val)
+                    
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-                     
-            result.append(node.val) # append only last node in the level
-                
-        return result
+                    
+        return result      
