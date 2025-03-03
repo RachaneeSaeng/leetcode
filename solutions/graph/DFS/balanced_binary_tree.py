@@ -16,6 +16,7 @@ class Solution:
             left_height = dfs(node.left)
             right_height = dfs(node.right)
             
+            # propage the -1 value to the top
             if left_height == -1 or right_height == -1 or abs(left_height - right_height) > 1:
                 return -1
             
