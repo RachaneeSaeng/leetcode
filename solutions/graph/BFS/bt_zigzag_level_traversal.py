@@ -2,7 +2,7 @@
 # https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/
 
 from collections import deque
-from solutions.tree.tree_node import TreeNode
+from solutions.graph.tree_node import TreeNode
 from typing import List, Optional
 
 # time complexity: O(N)

@@ -4,7 +4,7 @@
 from collections import deque
 from typing import Optional
 
-from solutions.tree.tree_node import TreeNode
+from solutions.graph.tree_node import TreeNode
 
 
 # time complexity: O(n)

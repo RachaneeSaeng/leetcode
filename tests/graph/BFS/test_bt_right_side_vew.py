@@ -1,6 +1,6 @@
 import pytest
-from solutions.tree.tree_node import TreeNode
-from solutions.tree.BFS.bt_right_side_view import Solution
+from solutions.graph.tree_node import TreeNode
+from solutions.graph.BFS.bt_right_side_view import Solution
 
 
 def test_right_side_view_empty_tree():

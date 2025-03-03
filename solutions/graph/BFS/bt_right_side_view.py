@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/binary-tree-right-side-view/description/
 
 from typing import Optional, List
-from solutions.tree.tree_node import TreeNode
+from solutions.graph.tree_node import TreeNode
 from collections import deque
 
 class Solution:

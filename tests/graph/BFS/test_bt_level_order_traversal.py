@@ -1,6 +1,6 @@
 import pytest
-from solutions.tree.tree_node import TreeNode
-from solutions.tree.BFS.bt_level_order_traversal import Solution
+from solutions.graph.tree_node import TreeNode
+from solutions.graph.BFS.bt_level_order_traversal import Solution
 
 def test_level_order_empty_tree():
     solution = Solution()

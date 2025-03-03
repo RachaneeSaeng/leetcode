@@ -2,7 +2,7 @@
 # https://algo.monster/problems/binary_tree_level_order_traversal
 
 from typing import List, Optional
-from solutions.tree.tree_node import TreeNode
+from solutions.graph.tree_node import TreeNode
 from collections import deque
 
 # Time complexity: O(N)
