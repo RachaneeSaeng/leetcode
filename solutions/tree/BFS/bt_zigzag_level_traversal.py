@@ -21,6 +21,7 @@ class Solution:
             for _ in range(len(queue)):
                 node = queue.popleft()
                 
+                # Key trick: insert the node value at the beginning or the end of the list based on the zigzag flag
                 if zigzag:
                     level_nodes.insert(0, node.val)
                 else:

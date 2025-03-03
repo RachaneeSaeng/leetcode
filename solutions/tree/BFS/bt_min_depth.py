@@ -22,6 +22,7 @@ class Solution:
             if not node.left and not node.right:
                 return depth
             
+            # key trick: store the depth of each node in the queue and +1 when adding children
             if node.left:
                 queue.append((node.left, depth+1))
             if node.right:
@@ -44,7 +45,8 @@ class Solution:
     #                 queue.append(node.left)
     #             if node.right:
     #                 queue.append(node.right)
-                    
+    
+    #         # key trick: increment the depth after processing all nodes in the current level               
     #         depth += 1
             
     #     return depth

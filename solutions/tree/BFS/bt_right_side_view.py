@@ -16,6 +16,8 @@ class Solution:
             level_length = len(queue)
             for i in range(level_length):
                 node = queue.popleft()
+                
+                # Key trick: only add the last node in the current level
                 if i == level_length - 1:
                     result.append(node.val)
                     

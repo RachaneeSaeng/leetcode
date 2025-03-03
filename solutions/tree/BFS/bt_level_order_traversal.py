@@ -17,7 +17,8 @@ class Solution:
         
         while queue:
             level_nodes = []
-            for _ in range(len(queue)): # process all nodes in the current level
+            # Key trick: process all nodes in the current level before moving to the next level
+            for _ in range(len(queue)):
                 node = queue.popleft()
                 level_nodes.append(node.val)
                 if node.left:
