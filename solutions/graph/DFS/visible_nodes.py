@@ -11,6 +11,6 @@ class Solution:
             return 0
         
         if not parentVal or parentVal <= root.val:
-            return 1 +  + self.countVisibleNodes(root.right, root.val) + self.countVisibleNodes(root.right, root.val)
+            return 1 + self.countVisibleNodes(root.right, root.val) + self.countVisibleNodes(root.right, root.val)
         
         return 0
